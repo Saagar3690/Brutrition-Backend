@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const uri = 'mongodb+srv://brutrition:UCLAbru2021@brutrition.qemvx.mongodb.net/Prod?retryWrites=true&w=majority' || process.env.MONGOLAB_URI;
+const uri = /*'mongodb+srv://brutrition:UCLAbru2021@brutrition.qemvx.mongodb.net/Prod?retryWrites=true&w=majority' ||*/ process.env.MONGOLAB_URI;
 
 mongoose.connect(uri, {
 	useNewUrlParser: true,
