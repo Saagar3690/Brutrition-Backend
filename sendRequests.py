@@ -4,7 +4,7 @@ from datetime import date, timedelta
 from scrape import scrape
 
 PORT = int(os.environ.get('PORT', 8080))
-URL = 'http://localhost:' + str(PORT) + '/menus'
+URL = 'https://brutrition.herokuapp.com/menus'
 
 
 def populateDatabase():
