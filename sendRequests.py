@@ -3,7 +3,6 @@ import os
 from datetime import date, timedelta
 from scrape import scrape
 
-PORT = int(os.environ.get('PORT', 8080))
 URL = 'https://brutrition.herokuapp.com/menus'
 
 
