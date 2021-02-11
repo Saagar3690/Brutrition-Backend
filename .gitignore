@@ -1,2 +1,8 @@
+# dependencies
 node_modules
+
+# dotenv
+.env
+
+# python modules
 __pycache__/

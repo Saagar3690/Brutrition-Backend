@@ -3,9 +3,9 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 // Good practice to not use .env files in production and rather set them directly
-/*if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production') {
 	require('dotenv').config();
-}*/
+}
 
 const app = express();
 
@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const uri = /*'mongodb+srv://brutrition:UCLAbru2021@brutrition.qemvx.mongodb.net/Prod?retryWrites=true&w=majority' ||*/ process.env.MONGOLAB_URI;
+const uri = process.env.MONGOLAB_URI;
 
 mongoose.connect(uri, {
 	useNewUrlParser: true,
