@@ -30,7 +30,7 @@ def removePreviousMenu():
     })
 
     if r.status_code == 200:
-        print('Successfully delete yesterday\'s menu')
+        print('Successfully deleted yesterday\'s menu')
         return True
     else:
         print('An error occurred trying to delete yesterday\'s menu')

@@ -166,7 +166,6 @@ def scrapeByMealTime(url, mealType, MENUS):
 
 def scrape(date):
     baseUrl = 'http://menu.dining.ucla.edu/Menus/' + date
-    print(baseUrl)
     urls = [baseUrl + '/Breakfast', baseUrl + '/Lunch', baseUrl + '/Dinner']
     meals = ['Breakfast', 'Lunch', 'Dinner']
 
