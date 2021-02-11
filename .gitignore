@@ -6,3 +6,6 @@ node_modules
 
 # python modules
 __pycache__/
+
+# macos directory metadata
+*.DS_Store

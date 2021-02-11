@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const uri = process.env.MONGOLAB_URI;
+const uri = process.env.DATABASE_URI;
 
 mongoose.connect(uri, {
 	useNewUrlParser: true,

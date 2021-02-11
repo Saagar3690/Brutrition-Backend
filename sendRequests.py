@@ -2,12 +2,14 @@ import requests
 from datetime import date, timedelta
 from scrape import scrape
 
+URL = 'https://brutrition.herokuapp.com/menus'
+
 
 def populateDatabase():
     created = str(date.today())
     menu = scrape(created)
 
-    r = requests.post('http://localhost:8080/menus', json={
+    r = requests.post(URL, json={
         'created': created,
         'menu': menu,
     })
@@ -23,7 +25,7 @@ def populateDatabase():
 def removePreviousMenu():
     yesterday = str(date.today() - timedelta(days=1))
 
-    r = requests.delete('http://localhost:8080/menus', json={
+    r = requests.delete(URL, json={
         'date': yesterday
     })
 
@@ -36,11 +38,10 @@ def removePreviousMenu():
 
 
 def main():
-    removed = removePreviousMenu()
-    while not removed:
-        removed = removePreviousMenu()
-
-    populated = populateDatabase()
+    #removed = False
+    # while not removed:
+    #    removed = removePreviousMenu()
+    populated = False
     while not populated:
         populated = populateDatabase()
 
