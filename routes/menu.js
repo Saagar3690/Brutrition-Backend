@@ -1,5 +1,4 @@
 const express = require('express');
-const { meanBy } = require('lodash');
 
 const menuRouter = express.Router();
 
