@@ -7,6 +7,8 @@ def populateDatabase():
     created = str(date.today())
     menu = scrape(created)
 
+    print('http://localhost:' + ${PORT} + '/menus')
+
     r = requests.post('http://localhost:8080/menus', json={
         'created': created,
         'menu': menu,
@@ -36,11 +38,11 @@ def removePreviousMenu():
 
 
 def main():
-    removed = removePreviousMenu()
-    while not removed:
-        removed = removePreviousMenu()
+    #removed = False
+    # while not removed:
+    #    removed = removePreviousMenu()
 
-    populated = populateDatabase()
+    populated = False
     while not populated:
         populated = populateDatabase()
 
