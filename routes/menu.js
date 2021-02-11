@@ -22,7 +22,11 @@ menuRouter.route('/date').get(async (req, res) => {
 	try {
     let data = await Menu.findOne({
       created: date
-    });
+		});
+
+		if (!data)
+			return res.status(400).json('Could not find menu specified by date');
+
 		res.json(data);
 	} catch (err) {
 		res.status(404).json(err);
