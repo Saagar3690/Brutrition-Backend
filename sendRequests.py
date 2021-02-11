@@ -4,7 +4,7 @@ from datetime import date, timedelta
 from scrape import scrape
 
 PORT = int(os.environ.get('PORT', 8080))
-URL = 'http://localhost:' + PORT + '/menus'
+URL = 'http://localhost:' + str(PORT) + '/menus'
 
 
 def populateDatabase():
@@ -45,7 +45,6 @@ def main():
     #removed = False
     # while not removed:
     #    removed = removePreviousMenu()
-
     populated = False
     while not populated:
         populated = populateDatabase()
