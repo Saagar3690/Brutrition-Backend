@@ -1,5 +1,4 @@
 import requests
-import os
 from datetime import date, timedelta
 from scrape import scrape
 
@@ -9,8 +8,6 @@ URL = 'https://brutrition.herokuapp.com/menus'
 def populateDatabase():
     created = str(date.today())
     menu = scrape(created)
-
-    print(URL)
 
     r = requests.post(URL, json={
         'created': created,
