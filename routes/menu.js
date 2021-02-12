@@ -3,9 +3,6 @@ const express = require('express');
 const menuRouter = express.Router();
 
 let { Menu } = require('../models/menu.model');
-let { DiningHall } = require('../models/diningHall.model');
-let { SubMenu } = require('../models/subMenu.model');
-let { Item, NutritionInfo } = require('../models/item.model');
 
 /**
  * ----------------- GET (return information about objects) ----------------
@@ -15,7 +12,7 @@ let { Item, NutritionInfo } = require('../models/item.model');
  * Return a specific Menu by date
  */
 menuRouter.route('/date').get(async (req, res) => {
-	const date = req.body.date;
+	const date = req.query.date;
 	if (!date)
 		return res.status(400).json(`'date' not provided in request body`);
 
