@@ -13,7 +13,6 @@ let { Menu } = require('../models/menu.model');
  */
 menuRouter.route('/date').get(async (req, res) => {
 	const date = req.query.date;
-	console.log(date);
 	if (!date)
 		return res.status(400).json(`'date' not provided in request body`);
 
